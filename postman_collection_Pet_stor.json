@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "4e8aba87-f535-4d46-b224-d804f4e156de",
+		"name": "Pet store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "STORE",
+			"item": [
+				{
+					"name": "Returns pet inventories by status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Kreupel\": 1,\r\n  \"placed\": 1,\r\n  \"string\": 71,\r\n  \"Onbekend-2\": 1,\r\n  \"Busy\": 1,\r\n  \"pending\": 36,\r\n  \"available\": 670,\r\n  \"Not Available\": 1,\r\n  \"admin\": 1,\r\n  \"sdet doggie\": 1,\r\n  \"Onbekend-4\": 1,\r\n  \"Onbekend-3\": 1,\r\n  \"Not Applicable\": 1,\r\n  \"Kreupel-2\": 1,\r\n  \"Kreupel-3\": 1,\r\n  \"Kreupel-4\": 1,\r\n  \"dfgdfg\": 1,\r\n  \"Sold\": 1,\r\n  \"Pet created from code\": 1,\r\n  \"avaliable\": 1,\r\n  \"lost\": 1,\r\n  \"spend\": 1,\r\n  \"available \": 1,\r\n  \"not available\": 1,\r\n  \"Available\": 2,\r\n  \"201_NotAvailable\": 1,\r\n  \"OK\": 1,\r\n  \"ok\": 6,\r\n  \"free\": 1,\r\n  \"Gestorven\": 1,\r\n  \"sold\": 45,\r\n  \"TestListPetTestStatusCloudNew\": 1,\r\n  \"stinky\": 1,\r\n  \"old\": 1,\r\n  \"avalible\": 1,\r\n  \"SOLD\": 1,\r\n  \"Verkocht\": 1,\r\n  \"Gestorven-4\": 1,\r\n  \"t\": 1,\r\n  \"Onbekend\": 1,\r\n  \"Gestorven-3\": 1,\r\n  \"Verkocht-3\": 1,\r\n  \"Verkocht-4\": 1,\r\n  \"Gestorven-2\": 1,\r\n  \"Verkocht-2\": 1,\r\n  \"Online\": 1,\r\n  \"Buzzing\": 1\r\n}"
+						},
+						"url": {
+							"raw": "https://{{env}}/v2/store/inventory",
+							"protocol": "https",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"store",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Place an order for a pet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"petId\": 0,\r\n  \"quantity\": 0,\r\n  \"shipDate\": \"2021-09-22T12:20:00.486Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}"
+						},
+						"url": {
+							"raw": "https://{{env}}/v2/store/order",
+							"protocol": "https",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"store",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find purchase order by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": 1,\r\n  \"type\": \"error\",\r\n  \"message\": \"Order not found\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{env}}/v2/store/order/7",
+							"protocol": "https",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"store",
+								"order",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete purchase order by iD",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": 404,\r\n  \"type\": \"unknown\",\r\n  \"message\": \"Order Not Found\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{env}}/v2/store/order/7",
+							"protocol": "https",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"store",
+								"order",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Creat user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"{{username}}\",\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"password\": \"12457\",\r\n  \"phone\": \"string\",\r\n  \"userStatus\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logs user intro the system",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": 200,\r\n  \"type\": \"unknown\",\r\n  \"message\": \"logged in user session:1632299244742\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/login?username=string&password=string",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "string"
+						},
+						{
+							"key": "password",
+							"value": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logs out current logged in user session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": 200,\r\n  \"type\": \"unknown\",\r\n  \"message\": \"ok\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/logout",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updated user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": 200,\r\n  \"type\": \"unknown\",\r\n  \"message\": \"9223372000666126729\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/string",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creates list 0f users with given input array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"{{username}}\",\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"email\": \"string\",\r\n    \"password\": \"string\",\r\n    \"phone\": \"string\",\r\n    \"userStatus\": 0\r\n  }\r\n]"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/createWithArray",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by user name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 9223372000666124000,\r\n  \"username\": \"{{username}}\",\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"password\": \"string\",\r\n  \"phone\": \"string\",\r\n  \"userStatus\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/string",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": 200,\r\n  \"type\": \"unknown\",\r\n  \"message\": \"string\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/string",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create list of users with given input array",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": 200,\r\n  \"type\": \"unknown\",\r\n  \"message\": \"ok\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{env}}/v2/user/createWithList",
+					"protocol": "https",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithList"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "env",
+			"value": "petstore.swagger.io"
+		},
+		{
+			"key": "username",
+			"value": "ivano"
+		}
+	]
+}
